@@ -7,7 +7,7 @@ add_shortcode('wiki_image_album', 'wiki_image_album_func');
 function wiki_image_album_func($atts) {
 
     $home_url = rtrim(network_site_url(), '/');
-    list($protocal, $home_domain) = split('://', $home_url);
+    $home_domain = explode('://', $home_url)[1];
     // options = 
     $options = shortcode_atts(
         array(
